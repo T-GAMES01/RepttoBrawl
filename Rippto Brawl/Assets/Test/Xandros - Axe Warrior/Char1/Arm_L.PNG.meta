@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 5a1a8c2be4e5e8c408318282a25e98fa
+guid: a5c05285768ebd740aa654147b57d7ee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9088384072897287942
-    second: Waving Hairs_0
+      213: 1148085517919300029
+    second: Arm_L_0
   - first:
-      213: -4870008114949575726
-    second: Waving Hairs_1
+      213: -1488566997170128580
+    second: Arm_L_1
+  - first:
+      213: 268293700431729236
+    second: Arm_L_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +106,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Waving Hairs_0
+      name: Arm_L_0
       rect:
         serializedVersion: 2
-        x: 1135
-        y: 2169
-        width: 573
-        height: 333
+        x: 1555
+        y: 1683
+        width: 223
+        height: 295
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6075c57792d602e70800000000000000
-      internalID: 9088384072897287942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Waving Hairs_1
-      rect:
-        serializedVersion: 2
-        x: 1559
-        y: 2118
-        width: 76
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2db292ffb614a6cb0800000000000000
-      internalID: -4870008114949575726
+      spriteID: db9a95b12b1deef00800000000000000
+      internalID: 1148085517919300029
       vertices: []
       indices: 
       edges: []
@@ -150,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5fdfb31ae6f72ae4e82928e350a40f06
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +141,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Waving Hairs_0: 9088384072897287942
-      Waving Hairs_1: -4870008114949575726
+      Arm_L_0: 1148085517919300029
+      Arm_L_1: -1488566997170128580
+      Arm_L_2: 268293700431729236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
