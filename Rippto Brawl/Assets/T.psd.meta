@@ -1,0 +1,1515 @@
+fileFormatVersion: 2
+guid: cb160ffbca58a1b4ea3ee8581704d75c
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 034e5640c9286424db983ea3df12128e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  multiSpriteImportData: []
+  layeredSpriteImportData:
+  - name: FrontScarf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 3356
+      width: 674
+      height: 339
+    spriteID: 3a48ce95a5bef4a4e9a64f7a61ff38da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1014, y: 3356}
+    spritePosition: {x: 1115, y: 1714}
+  - name: FrontScarf_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1002
+      height: 1037
+    spriteID: cbee33aef114ff5408137dfb0113108e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 992, y: 1147}
+  - name: LeftArm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 3260
+      width: 181
+      height: 363
+    spriteID: 414933de5773cb147a2b7b23803a5f80
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 3260}
+    spritePosition: {x: 1605, y: 1420}
+  - name: LeftArm_Noise
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 3039
+      width: 218
+      height: 451
+    spriteID: eb6016d74aec31c4180cab7b05192faa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 679, y: 3039}
+    spritePosition: {x: 1570, y: 1420}
+  - name: LeftArm_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1691
+      y: 2670
+      width: 178
+      height: 431
+    spriteID: 6bfc779bc6ad26d4c9b398d4c3e857c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1691, y: 2670}
+    spritePosition: {x: 1606, y: 1424}
+  - name: LeftArm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 3631
+      width: 206
+      height: 282
+    spriteID: b3a48190648f59c4a95f4725e99fd49f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 3631}
+    spritePosition: {x: 1556, y: 1694}
+  - name: LeftArm_Noise
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 2100
+      width: 209
+      height: 377
+    spriteID: 62417f2fac5123142a3ab99bfaf18d05
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 2100}
+    spritePosition: {x: 1570, y: 1494}
+  - name: LeftArm_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2101
+      y: 2956
+      width: 199
+      height: 288
+    spriteID: 0b2a8f728239de847983c8951264bbb4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2101, y: 2956}
+    spritePosition: {x: 1559, y: 1686}
+  - name: Right Hand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2317
+      y: 1497
+      width: 112
+      height: 102
+    spriteID: f7518c7e6536c66418d6f6ae8fbd3054
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2317, y: 1497}
+    spritePosition: {x: 1140, y: 1440}
+  - name: Right Hand_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 1344
+      width: 862
+      height: 649
+    spriteID: 5d60a144fa67e9b469fadec07c6f8c10
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1014, y: 1344}
+    spritePosition: {x: 1081, y: 1407}
+  - name: HIP
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 3852
+      width: 318
+      height: 126
+    spriteID: 67cb16594168f80439d01095c52a848a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 679, y: 3852}
+    spritePosition: {x: 1274, y: 1557}
+  - name: HIP_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 2670
+      width: 669
+      height: 678
+    spriteID: 950d11437eb19a344ae002a1efa0b86e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1014, y: 2670}
+    spritePosition: {x: 1163, y: 1487}
+  - name: LeftThigh
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2101
+      y: 2354
+      width: 237
+      height: 295
+    spriteID: d6c714f17a345e545a17554511490bcf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2101, y: 2354}
+    spritePosition: {x: 1412, y: 1319}
+  - name: LeftThigh_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2101
+      y: 1708
+      width: 256
+      height: 287
+    spriteID: b9e1237f7c1bd4443a025322b5005518
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2101, y: 1708}
+    spritePosition: {x: 1391, y: 1328}
+  - name: LeftShin
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 1708
+      width: 209
+      height: 384
+    spriteID: 4b1369b24cddea648927a5c9371eb490
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 1708}
+    spritePosition: {x: 1505, y: 1037}
+  - name: LeftShin_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 2485
+      width: 206
+      height: 380
+    spriteID: 6ed1b9583fdb68641980249da0af65eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 2485}
+    spritePosition: {x: 1506, y: 1041}
+  - name: RightThigh
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2101
+      y: 2003
+      width: 212
+      height: 343
+    spriteID: 24cfd04d081211d4baef95da2ae1bae4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2101, y: 2003}
+    spritePosition: {x: 1247, y: 1322}
+  - name: RightThigh_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2101
+      y: 2657
+      width: 218
+      height: 291
+    spriteID: 1dd236b0dd2b69d4d8df4966e02c8713
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2101, y: 2657}
+    spritePosition: {x: 1250, y: 1326}
+  - name: RightShin
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1593
+      y: 3703
+      width: 245
+      height: 353
+    spriteID: 999d27f131af879468b58cd3a117aad4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1593, y: 3703}
+    spritePosition: {x: 1154, y: 1064}
+  - name: RightShin_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 679
+      y: 3498
+      width: 242
+      height: 346
+    spriteID: 250b39795077a1448b37ae25836e29ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 679, y: 3498}
+    spritePosition: {x: 1157, y: 1068}
+  - name: Waving Hairs
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 3703
+      width: 571
+      height: 382
+    spriteID: a114ad3a499c57945b41176dc7c9228f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1014, y: 3703}
+    spritePosition: {x: 1136, y: 2119}
+  - name: WavingHair_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 4
+      width: 554
+      height: 370
+    spriteID: 7b29e4a4432ff1840b53c153a0c76444
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 4}
+    spritePosition: {x: 1143, y: 2127}
+  - name: Head
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 1219
+      width: 426
+      height: 270
+    spriteID: be6724d036fabec4fa475281e2ca1248
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 1219}
+    spritePosition: {x: 1234, y: 1969}
+  - name: Head_Noise
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 1497
+      width: 425
+      height: 203
+    spriteID: fc75d16428f2af14f97ee4bf9d8b489c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 1497}
+    spritePosition: {x: 1221, y: 2194}
+  - name: Head_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 2001
+      width: 713
+      height: 661
+    spriteID: 7909eabbb11c79f4f9f74f3c912e565c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1014, y: 2001}
+    spritePosition: {x: 1065, y: 1784}
+  - name: Torso
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 382
+      width: 407
+      height: 412
+    spriteID: e7a003fad733f6b4aa614fd98187e6f2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 382}
+    spritePosition: {x: 1252, y: 1666}
+  - name: Torso_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3039
+      width: 667
+      height: 890
+    spriteID: 2aaa849810ab18249b647e07315151d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3039}
+    spritePosition: {x: 988, y: 1628}
+  - name: RightArm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2101
+      y: 3252
+      width: 145
+      height: 374
+    spriteID: 7f0d7ca6a764bd64d8defaf4b55d6e37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2101, y: 3252}
+    spritePosition: {x: 1185, y: 1576}
+  - name: RightArm_ColorNoise
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2411
+      y: 1607
+      width: 0
+      height: 0
+    spriteID: 72f37a1df1147e34cb7b001f89fde6be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2411, y: 1607}
+    spritePosition: {x: 0, y: 3500}
+  - name: RightArm_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 4
+      width: 862
+      height: 662
+    spriteID: dcdc94a74cf9bbc4f85662ebe0153957
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1014, y: 4}
+    spritePosition: {x: 1081, y: 1394}
+  - name: RightArm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 2873
+      width: 176
+      height: 379
+    spriteID: f32b4f8be2282504f8648633dbff2302
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 2873}
+    spritePosition: {x: 1111, y: 1433}
+  - name: RightArm_ColorNoise
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2317
+      y: 1607
+      width: 86
+      height: 56
+    spriteID: 6d5cc0268522b994d8716f63139d34d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2317, y: 1607}
+    spritePosition: {x: 1118, y: 1437}
+  - name: RightArm_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1014
+      y: 674
+      width: 862
+      height: 662
+    spriteID: 6380ad0defe5fe04bbe8177543a9a91e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1014, y: 674}
+    spritePosition: {x: 1081, y: 1394}
+  - name: BottomScarf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2094
+      width: 937
+      height: 937
+    spriteID: 376bfc3d3a05806449d52052e672f5d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2094}
+    spritePosition: {x: 1041, y: 1241}
+  - name: BottomScarf_Color Noise
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1691
+      y: 3109
+      width: 126
+      height: 178
+    spriteID: f84def43aa698e14786c3fd27f57956a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1691, y: 3109}
+    spritePosition: {x: 1108, y: 1283}
+  - name: BottomScarf_Noise2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1884
+      y: 802
+      width: 405
+      height: 409
+    spriteID: cdf6c63615156334b8aea51beb3812e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1884, y: 802}
+    spritePosition: {x: 1255, y: 1236}
+  - name: BottomScarf_Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1049
+      width: 1002
+      height: 1037
+    spriteID: 6345100fa11c3de4eaab52eb84f03cb4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1049}
+    spritePosition: {x: 992, y: 1147}
+  spriteImportData: []
+  rigSpriteImportData: []
+  sharedRigSpriteImportData: []
+  mosaicSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  generateTileAssets: 0
+  tilePaletteCellLayout: 0
+  tilePaletteHexagonLayout: 0
+  tilePaletteCellSize: {x: 1, y: 1, z: 0}
+  tilePaletteCellSizing: 0
+  transparencySortMode: 0
+  transparencySortAxis: {x: 0, y: 0, z: 1}
+  tileTemplate: {instanceID: 0}
+  padding: 4
+  spriteSizeExpand: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  pSDLayerImportSetting: []
+  psdLayers:
+  - name: Paint Layer 1
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ffab3a8aa5cd8454a9b7b9f1d2b5147c
+    layerID: 0
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: FrontScarf
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: a7bb1d83cb252d047a6b7b29dd16614b
+    layerID: -2007379126
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: FrontScarf
+    spriteName: FrontScarf
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 3a48ce95a5bef4a4e9a64f7a61ff38da
+    layerID: -1133392142
+    mosaicPosition: {x: 1014, y: 3356}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: FrontScarf_Color
+    spriteName: FrontScarf_Color
+    isGroup: 0
+    parentIndex: 1
+    spriteID: cbee33aef114ff5408137dfb0113108e
+    layerID: 233458886
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: ForeArm_L
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 894906f969a7a9945b133ca293087ed5
+    layerID: 2069265787
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: LeftArm
+    spriteName: LeftArm
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 414933de5773cb147a2b7b23803a5f80
+    layerID: 1561523361
+    mosaicPosition: {x: 1884, y: 3260}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LeftArm_Noise
+    spriteName: LeftArm_Noise
+    isGroup: 0
+    parentIndex: 4
+    spriteID: eb6016d74aec31c4180cab7b05192faa
+    layerID: -1237099718
+    mosaicPosition: {x: 679, y: 3039}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LeftArm_Color
+    spriteName: LeftArm_Color
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 6bfc779bc6ad26d4c9b398d4c3e857c0
+    layerID: 1586138907
+    mosaicPosition: {x: 1691, y: 2670}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Arm_L
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: abe91460892368b429847ec893a60d62
+    layerID: -1765917875
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: LeftArm
+    spriteName: LeftArm
+    isGroup: 0
+    parentIndex: 8
+    spriteID: b3a48190648f59c4a95f4725e99fd49f
+    layerID: -2025759185
+    mosaicPosition: {x: 1884, y: 3631}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LeftArm_Noise
+    spriteName: LeftArm_Noise
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 62417f2fac5123142a3ab99bfaf18d05
+    layerID: -1578083742
+    mosaicPosition: {x: 1884, y: 2100}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LeftArm_Color
+    spriteName: LeftArm_Color
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 0b2a8f728239de847983c8951264bbb4
+    layerID: -1475568247
+    mosaicPosition: {x: 2101, y: 2956}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hand_R
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: f596b51e4bcf4ec46ac2dc78622863cd
+    layerID: 846250166
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Right Hand
+    spriteName: Right Hand
+    isGroup: 0
+    parentIndex: 12
+    spriteID: f7518c7e6536c66418d6f6ae8fbd3054
+    layerID: -1440209081
+    mosaicPosition: {x: 2317, y: 1497}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Right Hand_Color
+    spriteName: Right Hand_Color
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 5d60a144fa67e9b469fadec07c6f8c10
+    layerID: 1098606505
+    mosaicPosition: {x: 1014, y: 1344}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hip
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: cbc61c24f6b8d424c99930439e16311e
+    layerID: 1010961817
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: HIP
+    spriteName: HIP
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 67cb16594168f80439d01095c52a848a
+    layerID: -211929895
+    mosaicPosition: {x: 679, y: 3852}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: HIP_Color
+    spriteName: HIP_Color
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 950d11437eb19a344ae002a1efa0b86e
+    layerID: -1311497889
+    mosaicPosition: {x: 1014, y: 2670}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Thigh_L
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: fe0930b65d40f6f40b9aa2ffbed01e57
+    layerID: -1588797147
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: LeftThigh
+    spriteName: LeftThigh
+    isGroup: 0
+    parentIndex: 18
+    spriteID: d6c714f17a345e545a17554511490bcf
+    layerID: 1679853953
+    mosaicPosition: {x: 2101, y: 2354}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LeftThigh_Color
+    spriteName: LeftThigh_Color
+    isGroup: 0
+    parentIndex: 18
+    spriteID: b9e1237f7c1bd4443a025322b5005518
+    layerID: 13863163
+    mosaicPosition: {x: 2101, y: 1708}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Shin_L
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: d2816c9b2274c1c4e9c3faa94043c7c5
+    layerID: -871174325
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: LeftShin
+    spriteName: LeftShin
+    isGroup: 0
+    parentIndex: 21
+    spriteID: 4b1369b24cddea648927a5c9371eb490
+    layerID: -1424581905
+    mosaicPosition: {x: 1884, y: 1708}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LeftShin_Color
+    spriteName: LeftShin_Color
+    isGroup: 0
+    parentIndex: 21
+    spriteID: 6ed1b9583fdb68641980249da0af65eb
+    layerID: 1111551509
+    mosaicPosition: {x: 1884, y: 2485}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Thigh_R
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 0c595f966a32dac469075015be4a1bb6
+    layerID: -1588797173
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: RightThigh
+    spriteName: RightThigh
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 24cfd04d081211d4baef95da2ae1bae4
+    layerID: -171818112
+    mosaicPosition: {x: 2101, y: 2003}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: RightThigh_Color
+    spriteName: RightThigh_Color
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 1dd236b0dd2b69d4d8df4966e02c8713
+    layerID: 152556432
+    mosaicPosition: {x: 2101, y: 2657}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Shin_R
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 76824ddd7e6e7d44fbb9ca9702ef7330
+    layerID: -2033973739
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: RightShin
+    spriteName: RightShin
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 999d27f131af879468b58cd3a117aad4
+    layerID: 1962117592
+    mosaicPosition: {x: 1593, y: 3703}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: RightShin_Color
+    spriteName: RightShin_Color
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 250b39795077a1448b37ae25836e29ee
+    layerID: 1380235204
+    mosaicPosition: {x: 679, y: 3498}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Waving Hairs
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 8353c6363d12a3d4ca615ab0d9559647
+    layerID: -1782811407
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Waving Hairs
+    spriteName: Waving Hairs
+    isGroup: 0
+    parentIndex: 30
+    spriteID: a114ad3a499c57945b41176dc7c9228f
+    layerID: 1888266923
+    mosaicPosition: {x: 1014, y: 3703}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: WavingHair_Color
+    spriteName: WavingHair_Color
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 7b29e4a4432ff1840b53c153a0c76444
+    layerID: 760453608
+    mosaicPosition: {x: 1884, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Head
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 908c226c7b83e85479042c7ba1595e6b
+    layerID: 28851968
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Head
+    spriteName: Head
+    isGroup: 0
+    parentIndex: 33
+    spriteID: be6724d036fabec4fa475281e2ca1248
+    layerID: -237535612
+    mosaicPosition: {x: 1884, y: 1219}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Head_Noise
+    spriteName: Head_Noise
+    isGroup: 0
+    parentIndex: 33
+    spriteID: fc75d16428f2af14f97ee4bf9d8b489c
+    layerID: -354410899
+    mosaicPosition: {x: 1884, y: 1497}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Head_Color
+    spriteName: Head_Color
+    isGroup: 0
+    parentIndex: 33
+    spriteID: 7909eabbb11c79f4f9f74f3c912e565c
+    layerID: 1155904144
+    mosaicPosition: {x: 1014, y: 2001}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Torso
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 64ba631c2cd7d1c47948d92ab9ea485d
+    layerID: -587803991
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Torso
+    spriteName: Torso
+    isGroup: 0
+    parentIndex: 37
+    spriteID: e7a003fad733f6b4aa614fd98187e6f2
+    layerID: -201239813
+    mosaicPosition: {x: 1884, y: 382}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Torso_Color
+    spriteName: Torso_Color
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 2aaa849810ab18249b647e07315151d4
+    layerID: -995502257
+    mosaicPosition: {x: 4, y: 3039}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Arm_R
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 1ac16d46d17525646be609ca3db93fd7
+    layerID: -1765917853
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: RightArm
+    spriteName: RightArm
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 7f0d7ca6a764bd64d8defaf4b55d6e37
+    layerID: 181087582
+    mosaicPosition: {x: 2101, y: 3252}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: RightArm_ColorNoise
+    spriteName: RightArm_ColorNoise
+    isGroup: 0
+    parentIndex: 40
+    spriteID: 72f37a1df1147e34cb7b001f89fde6be
+    layerID: 892523928
+    mosaicPosition: {x: 2411, y: 1607}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: RightArm_Color
+    spriteName: RightArm_Color
+    isGroup: 0
+    parentIndex: 40
+    spriteID: dcdc94a74cf9bbc4f85662ebe0153957
+    layerID: -2142609422
+    mosaicPosition: {x: 1014, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: ForeArm_R
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 06e097f9339e5c94fb6a8c3bdcfd4d22
+    layerID: 2069265785
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: RightArm
+    spriteName: RightArm
+    isGroup: 0
+    parentIndex: 44
+    spriteID: f32b4f8be2282504f8648633dbff2302
+    layerID: -2042746150
+    mosaicPosition: {x: 1884, y: 2873}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: RightArm_ColorNoise
+    spriteName: RightArm_ColorNoise
+    isGroup: 0
+    parentIndex: 44
+    spriteID: 6d5cc0268522b994d8716f63139d34d1
+    layerID: -1465104724
+    mosaicPosition: {x: 2317, y: 1607}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: RightArm_Color
+    spriteName: RightArm_Color
+    isGroup: 0
+    parentIndex: 44
+    spriteID: 6380ad0defe5fe04bbe8177543a9a91e
+    layerID: 816154506
+    mosaicPosition: {x: 1014, y: 674}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BottomScarf
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: ae53f03b87e0fee49a28ab6faac427c2
+    layerID: -657063342
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: BottomScarf
+    spriteName: BottomScarf
+    isGroup: 0
+    parentIndex: 48
+    spriteID: 376bfc3d3a05806449d52052e672f5d9
+    layerID: -779552074
+    mosaicPosition: {x: 4, y: 2094}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BottomScarf_Color Noise
+    spriteName: BottomScarf_Color Noise
+    isGroup: 0
+    parentIndex: 48
+    spriteID: f84def43aa698e14786c3fd27f57956a
+    layerID: -407362020
+    mosaicPosition: {x: 1691, y: 3109}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BottomScarf_Noise2
+    spriteName: BottomScarf_Noise2
+    isGroup: 0
+    parentIndex: 48
+    spriteID: cdf6c63615156334b8aea51beb3812e6
+    layerID: 575802121
+    mosaicPosition: {x: 1884, y: 802}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BottomScarf_Color
+    spriteName: BottomScarf_Color
+    isGroup: 0
+    parentIndex: 48
+    spriteID: 6345100fa11c3de4eaab52eb84f03cb4
+    layerID: 584047622
+    mosaicPosition: {x: 4, y: 1049}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Background
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dca114357d46586429bddb6556a4eb1b
+    layerID: -1498723586
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  mosaicPSDLayers: []
+  rigPSDLayers: []
+  sharedRigPSDLayers: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
