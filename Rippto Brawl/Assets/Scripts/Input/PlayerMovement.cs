@@ -10,9 +10,15 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
 
+    [Header("Dash Settings")]
+    public float dashSpeed = 15f;
+    public float dashDuration = 0.2f;
+    private bool isDashing = false;
+    private float dashTime;
+
     private bool isGrounded;
-    private int jumpCount = 0;       // track jumps
-    public int maxJumps = 2;         // 2 = double jump
+    private int jumpCount = 0;
+    public int maxJumps = 2;
 
     private void Awake()
     {
@@ -27,16 +33,32 @@ public class PlayerMovement : MonoBehaviour
     {
         if (input == null) return;
 
-        // ✅ movement
+        if (isDashing)
+        {
+            // jab tak dash chal raha hai
+            rb.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+            dashTime -= Time.fixedDeltaTime;
+            if (dashTime <= 0) isDashing = false;
+            return;
+        }
+
+        // Normal movement
         rb.linearVelocity = new Vector2(input.MoveInput.x * moveSpeed, rb.linearVelocity.y);
 
-        // ✅ jump logic
+        // Jump
         if (input.JumpPressed && jumpCount < maxJumps)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpCount++;
-            input.ResetJump(); // jump consume ho gaya
-            Debug.Log($"🟢 Jump #{jumpCount}");
+            input.ResetJump();
+        }
+
+        // ✅ Dash trigger
+        if (input.DashPressed && !isDashing)
+        {
+            isDashing = true;
+            dashTime = dashDuration;
+            Debug.Log("⚡ Dash Start!");
         }
     }
 
@@ -45,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             isGrounded = true;
-            jumpCount = 0; // ✅ reset jump count on landing
+            jumpCount = 0;
         }
     }
 
