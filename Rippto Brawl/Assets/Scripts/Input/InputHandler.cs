@@ -27,4 +27,10 @@ public class InputHandler : MonoBehaviour
 
     private void OnEnable() => controls.Enable();
     private void OnDisable() => controls.Disable();
+
+    // ✅ Add this helper
+    public void ResetJump()
+    {
+        JumpPressed = false;
+    }
 }
