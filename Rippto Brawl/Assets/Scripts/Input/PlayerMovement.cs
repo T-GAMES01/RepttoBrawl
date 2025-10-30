@@ -13,14 +13,16 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dash Settings")]
     public float dashSpeed = 15f;
     public float dashDuration = 0.2f;
-    public float dashCooldown = 0.5f; // New: Dash cooldown duration
+    public float dashCooldown = 0.5f;
     private bool isDashing = false;
     private float dashTime;
-    private float lastDashTime = -Mathf.Infinity; // New: Time when dash was last used
+    private float lastDashTime = -Mathf.Infinity;
 
     private bool isGrounded;
     private int jumpCount = 0;
     public int maxJumps = 2;
+
+    private int facingDirection = 1; // 1 = right, -1 = left
 
     private void Awake()
     {
@@ -35,19 +37,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (input == null) return;
 
+        // ✅ DASH LOGIC
         if (isDashing)
         {
-            // jab tak dash chal raha hai
-            rb.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+            rb.linearVelocity = new Vector2(facingDirection * dashSpeed, 0);
             dashTime -= Time.fixedDeltaTime;
             if (dashTime <= 0) isDashing = false;
             return;
         }
 
-        // Normal movement
-        rb.linearVelocity = new Vector2(input.MoveInput.x * moveSpeed, rb.linearVelocity.y);
+        // ✅ MOVEMENT
+        float moveX = input.MoveInput.x;
+        rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
 
-        // Jump
+        // ✅ FACE FLIP LOGIC
+        if (moveX > 0.1f)
+            FaceDirection(1); // Right
+        else if (moveX < -0.1f)
+            FaceDirection(-1); // Left
+
+        // ✅ JUMP LOGIC
         if (input.JumpPressed && jumpCount < maxJumps)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -55,13 +64,24 @@ public class PlayerMovement : MonoBehaviour
             input.ResetJump();
         }
 
-        // ✅ Dash trigger
-        if (input.DashPressed && !isDashing && (Time.time - lastDashTime >= dashCooldown)) // Modified: Added cooldown check
+        // ✅ DASH TRIGGER
+        if (input.DashPressed && !isDashing && (Time.time - lastDashTime >= dashCooldown))
         {
             isDashing = true;
             dashTime = dashDuration;
-            lastDashTime = Time.time; // New: Record dash time
+            lastDashTime = Time.time;
             Debug.Log("⚡ Dash Start!");
+        }
+    }
+
+    private void FaceDirection(int direction)
+    {
+        if (facingDirection != direction)
+        {
+            facingDirection = direction;
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * direction; // flip sprite correctly
+            transform.localScale = scale;
         }
     }
 
