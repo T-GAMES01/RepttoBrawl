@@ -4,23 +4,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private InputHandler input; // drag script reference here (not GameObject)
-
-    [Header("Movement Settings")]
-    public float moveSpeed = 5f;
-    public float jumpForce = 7f;
-
-    [Header("Dash Settings")]
-    public float dashSpeed = 15f;
-    public float dashDuration = 0.2f;
-    public float dashCooldown = 0.5f;
-    private bool isDashing = false;
-    private float dashTime;
-    private float lastDashTime = -Mathf.Infinity;
+    [SerializeField] private InputHandler input;
 
     private bool isGrounded;
     private int jumpCount = 0;
-    public int maxJumps = 2;
+
+    private bool isDashing = false;
+    private float dashTime;
+    private float lastDashTime = -Mathf.Infinity;
 
     private int facingDirection = 1; // 1 = right, -1 = left
 
@@ -37,10 +28,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (input == null) return;
 
+        var gc = GlobalConstants.Instance; // ✅ FIXED variable name
+
         // ✅ DASH LOGIC
         if (isDashing)
         {
-            rb.linearVelocity = new Vector2(facingDirection * dashSpeed, 0);
+            rb.linearVelocity = new Vector2(facingDirection * gc.DASH_SPEED, 0);
             dashTime -= Time.fixedDeltaTime;
             if (dashTime <= 0) isDashing = false;
             return;
@@ -48,29 +41,29 @@ public class PlayerMovement : MonoBehaviour
 
         // ✅ MOVEMENT
         float moveX = input.MoveInput.x;
-        rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveX * gc.MOVE_SPEED, rb.linearVelocity.y);
 
         // ✅ FACE FLIP LOGIC
         if (moveX > 0.1f)
-            FaceDirection(1); // Right
+            FaceDirection(1);
         else if (moveX < -0.1f)
-            FaceDirection(-1); // Left
+            FaceDirection(-1);
 
         // ✅ JUMP LOGIC
-        if (input.JumpPressed && jumpCount < maxJumps)
+        if (input.JumpPressed && jumpCount < gc.MAX_JUMPS)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, gc.JUMP_FORCE);
             jumpCount++;
             input.ResetJump();
         }
 
         // ✅ DASH TRIGGER
-        if (input.DashPressed && !isDashing && (Time.time - lastDashTime >= dashCooldown))
+        if (input.DashPressed && !isDashing && (Time.time - lastDashTime >= gc.DASH_COOLDOWN))
         {
             isDashing = true;
-            dashTime = dashDuration;
+            dashTime = gc.DASH_DURATION;
             lastDashTime = Time.time;
-            Debug.Log("⚡ Dash Start!");
+            gc.Log("⚡ Dash Start!");
         }
     }
 
@@ -80,14 +73,14 @@ public class PlayerMovement : MonoBehaviour
         {
             facingDirection = direction;
             Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x) * direction; // flip sprite correctly
+            scale.x = Mathf.Abs(scale.x) * direction;
             transform.localScale = scale;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (collision.gameObject.layer == GlobalConstants.Instance.LAYER_GROUND)
         {
             isGrounded = true;
             jumpCount = 0;
@@ -96,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (collision.gameObject.layer == GlobalConstants.Instance.LAYER_GROUND)
             isGrounded = false;
     }
 }

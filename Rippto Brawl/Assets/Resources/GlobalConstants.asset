@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a78481a5b6a91d44a04aa1db5fcb0ac, type: 3}
+  m_Name: GlobalConstants
+  m_EditorClassIdentifier: Assembly-CSharp::GlobalConstants
+  LAYER_GROUND: 6
+  MOVE_SPEED: 5
+  JUMP_FORCE: 7
+  MAX_JUMPS: 2
+  DASH_SPEED: 15
+  DASH_DURATION: 0.2
+  DASH_COOLDOWN: 0.5
+  ENABLE_DEBUG: 1
