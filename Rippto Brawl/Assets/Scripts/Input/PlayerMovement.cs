@@ -13,8 +13,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dash Settings")]
     public float dashSpeed = 15f;
     public float dashDuration = 0.2f;
+    public float dashCooldown = 0.5f; // New: Dash cooldown duration
     private bool isDashing = false;
     private float dashTime;
+    private float lastDashTime = -Mathf.Infinity; // New: Time when dash was last used
 
     private bool isGrounded;
     private int jumpCount = 0;
@@ -54,10 +56,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // ✅ Dash trigger
-        if (input.DashPressed && !isDashing)
+        if (input.DashPressed && !isDashing && (Time.time - lastDashTime >= dashCooldown)) // Modified: Added cooldown check
         {
             isDashing = true;
             dashTime = dashDuration;
+            lastDashTime = Time.time; // New: Record dash time
             Debug.Log("⚡ Dash Start!");
         }
     }
