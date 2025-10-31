@@ -4,92 +4,86 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private InputHandler input;
+    private float moveX;
+    private bool jumpRequested;
 
-    private bool isGrounded;
     private int jumpCount = 0;
-
     private bool isDashing = false;
     private float dashTime;
     private float lastDashTime = -Mathf.Infinity;
 
-    private int facingDirection = 1; // 1 = right, -1 = left
+    private int facingDirection = 1;
+    private Vector3 originalScale;
+
+    public float moveSpeed = 5f;
+    public float jumpForce = 8f;
+    public float dashSpeed = 12f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 1f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        if (input == null) input = GetComponent<InputHandler>();
-
         rb.freezeRotation = true;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+
+        originalScale = transform.localScale; // ✅ original scale save
     }
 
     private void FixedUpdate()
     {
-        if (input == null) return;
-
-        var gc = GlobalConstants.Instance; // ✅ FIXED variable name
-
-        // ✅ DASH LOGIC
+        // ✅ DASH
         if (isDashing)
         {
-            rb.linearVelocity = new Vector2(facingDirection * gc.DASH_SPEED, 0);
+            rb.linearVelocity = new Vector2(facingDirection * dashSpeed, 0);
             dashTime -= Time.fixedDeltaTime;
             if (dashTime <= 0) isDashing = false;
             return;
         }
 
         // ✅ MOVEMENT
-        float moveX = input.MoveInput.x;
-        rb.linearVelocity = new Vector2(moveX * gc.MOVE_SPEED, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
 
-        // ✅ FACE FLIP LOGIC
-        if (moveX > 0.1f)
-            FaceDirection(1);
-        else if (moveX < -0.1f)
-            FaceDirection(-1);
+        // ✅ FACE FLIP
+        if (moveX > 0.1f) FaceDirection(1);
+        else if (moveX < -0.1f) FaceDirection(-1);
 
-        // ✅ JUMP LOGIC
-        if (input.JumpPressed && jumpCount < gc.MAX_JUMPS)
+        // ✅ JUMP
+        if (jumpRequested)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, gc.JUMP_FORCE);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpCount++;
-            input.ResetJump();
-        }
-
-        // ✅ DASH TRIGGER
-        if (input.DashPressed && !isDashing && (Time.time - lastDashTime >= gc.DASH_COOLDOWN))
-        {
-            isDashing = true;
-            dashTime = gc.DASH_DURATION;
-            lastDashTime = Time.time;
-            gc.Log("⚡ Dash Start!");
+            jumpRequested = false;
         }
     }
 
-    private void FaceDirection(int direction)
+    private void FaceDirection(int dir)
     {
-        if (facingDirection != direction)
+        if (facingDirection != dir)
         {
-            facingDirection = direction;
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x) * direction;
+            facingDirection = dir;
+            Vector3 scale = originalScale; // ✅ always use original scale
+            scale.x *= dir;                // flip x-axis only
             transform.localScale = scale;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Move(float horizontal) => moveX = horizontal;
+
+    public void Jump()
     {
-        if (collision.gameObject.layer == GlobalConstants.Instance.LAYER_GROUND)
+        if (jumpCount < 2) jumpRequested = true; // double jump support
+    }
+
+    public void Dash()
+    {
+        if (!isDashing && Time.time - lastDashTime >= dashCooldown)
         {
-            isGrounded = true;
-            jumpCount = 0;
+            isDashing = true;
+            dashTime = dashDuration;
+            lastDashTime = Time.time;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == GlobalConstants.Instance.LAYER_GROUND)
-            isGrounded = false;
-    }
+    public void ResetJump() => jumpCount = 0;
 }

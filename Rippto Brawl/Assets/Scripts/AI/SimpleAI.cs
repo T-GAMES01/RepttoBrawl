@@ -2,41 +2,22 @@ using UnityEngine;
 
 public class SimpleAI : MonoBehaviour
 {
-    public Transform target;
-    private PlayerMovement movement;
-    private AttackController attack;
-    private float decisionTimer;
+    public float moveDistance = 1.5f;
 
-    void Start()
-    {
-        movement = GetComponent<PlayerMovement>();
-        attack = GetComponent<AttackController>();
-        decisionTimer = Random.Range(1f, 3f);
-    }
-
-    public void UpdateAI()
+    public void HandleAI(Transform target, PlayerMovement movement, AttackController attackCtrl)
     {
         if (target == null) return;
 
-        decisionTimer -= Time.deltaTime;
-        if (decisionTimer <= 0)
+        float distance = target.position.x - transform.position.x;
+
+        if (Mathf.Abs(distance) > moveDistance)
         {
-            MakeDecision();
-            decisionTimer = Random.Range(1f, 3f);
+            movement.Move(Mathf.Sign(distance));
         }
-    }
-
-    void MakeDecision()
-    {
-        Vector2 dir = target.position - transform.position;
-
-        // Move left/right
-        movement.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(Mathf.Sign(dir.x) * GlobalConstants.Instance.MOVE_SPEED, 0);
-
-        // Attack if close
-        if (Vector2.Distance(target.position, transform.position) < 2f)
+        else
         {
-            attack?.DoAttack();
+            movement.Move(0);
+            attackCtrl.TryAttack(target);
         }
     }
 }

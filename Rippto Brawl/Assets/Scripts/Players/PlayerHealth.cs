@@ -1,57 +1,36 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerHealth : MonoBehaviour
 {
-    [Header("Health Settings")]
-    public float maxHealth = 100f; // max limit (sirf info)
-    public float currentHealth;    // abhi ki health (Brawlhalla style)
+    public float maxHealth = 100f;
+    public float knockbackForce = 8f;
+    public bool IsDead { get; private set; }
 
-    [Header("Knockback Settings")]
-    public float knockbackMultiplier = 5f; // health ke sath knockback barhta ha
+    private float currentHealth;
     private Rigidbody2D rb;
 
-    [Header("Death Zone Limits")]
-    public float deathdownY = -10f; 
-    public float deathupX = -10f;   // niche girne par death
-    public float deathXLeft = -15f;  // left side limit
-    public float deathXRight = 15f;  // right side limit
-
-    [Header("Respawn Point")]
-    public Vector3 respawnPoint = Vector3.zero; // jahan respawn hoga
-
-    private void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentHealth = 0f; // Brawlhalla style (jitni zyada health, utna danger)
+        currentHealth = maxHealth;
     }
 
-    private void Update()
+    public void TakeDamage(int dmg, Vector2 attackerPos)
     {
-        // agar player screen ke bahar gaya to die
-        if (transform.position.y < deathdownY ||
-            transform.position.y > deathupX ||
-            transform.position.x < deathXLeft ||
-            transform.position.x > deathXRight)
+        if (IsDead) return;
+
+        currentHealth -= dmg;
+        float dir = Mathf.Sign(transform.position.x - attackerPos.x);
+        rb.AddForce(new Vector2(dir * knockbackForce, knockbackForce), ForceMode2D.Impulse);
+
+        Debug.Log($"{gameObject.name} took {dmg} damage | Health: {currentHealth}");
+
+        if (currentHealth <= 0)
         {
-            Die();
+            IsDead = true;
+            Debug.Log($"{gameObject.name} KO!");
+            Destroy(gameObject, 1f);
         }
-    }
-
-    public void TakeHit(Vector2 hitDirection, float damage)
-    {
-        currentHealth += damage; // damage me health barhti ha (Brawlhalla logic)
-        Debug.Log("💢 Health: " + currentHealth);
-
-        // knockback zyada jab health zyada
-        float knockForce = knockbackMultiplier * (currentHealth / 10f);
-        rb.AddForce(hitDirection * knockForce, ForceMode2D.Impulse);
-    }
-
-    private void Die()
-    {
-        Debug.Log("💀 Player Dead!");
-        currentHealth = 0f;
-        transform.position = respawnPoint; // respawn hota ha
-        rb.linearVelocity = Vector2.zero;
     }
 }

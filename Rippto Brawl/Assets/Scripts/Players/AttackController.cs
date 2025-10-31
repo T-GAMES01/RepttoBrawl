@@ -2,34 +2,27 @@ using UnityEngine;
 
 public class AttackController : MonoBehaviour
 {
-    [Header("Attack Settings")]
-    public float attackDamage = 10f;
-    public float attackRange = 1.5f;
-    public LayerMask enemyLayer;
-    public Transform attackPoint;
+    public int damage = 10;
+    public float attackRange = 1.2f;
+    public float attackCooldown = 0.5f;
+    private bool canAttack = true;
 
-    public void DoAttack()
+    public void TryAttack(Transform target)
     {
-        if (attackPoint == null)
-        {
-            Debug.LogWarning("Attack point missing!");
-            return;
-        }
+        if (target == null || !canAttack) return;
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-        foreach (var enemy in hitEnemies)
+        float dist = Vector2.Distance(transform.position, target.position);
+        if (dist <= attackRange)
         {
-            Vector2 dir = (enemy.transform.position - transform.position).normalized;
-            enemy.GetComponent<PlayerHealth>()?.TakeHit(dir, attackDamage);
+            PlayerHealth enemy = target.GetComponent<PlayerHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage, transform.position);
+            }
+            canAttack = false;
+            Invoke(nameof(ResetAttack), attackCooldown);
         }
-
-        GlobalConstants.Instance.Log("⚔️ Attack triggered!");
     }
 
-    void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null) return;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
+    private void ResetAttack() => canAttack = true;
 }

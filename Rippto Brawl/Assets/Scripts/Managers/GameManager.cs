@@ -3,14 +3,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private void Awake()
+    public bool GameOver { get; private set; }
+
+    void Awake()
     {
         if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
-    public void PlayerDied(PlayerHealth player)
+    public void EndGame(string winner)
     {
-        GlobalConstants.Instance.Log($"☠️ {player.name} Died!");
-        // TODO: win condition check
+        GameOver = true;
+        Debug.Log("Game Over! Winner: " + winner);
     }
 }
