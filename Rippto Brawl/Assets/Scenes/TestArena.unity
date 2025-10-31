@@ -786,7 +786,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -794,7 +794,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -808,8 +808,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1731165487}
   - {fileID: 1492446006}
@@ -855,10 +855,10 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   knockbackMultiplier: 5
-  deathdownY: -10
-  deathupX: 3
-  deathXLeft: -7
-  deathXRight: 7
+  deathdownY: -8
+  deathupX: 8
+  deathXLeft: -10
+  deathXRight: 10
   respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &738882495
 GameObject:
@@ -1012,7 +1012,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.49
+  orthographic size: 5.71
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2394,7 +2394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1328337999352734181, guid: a458a7f0c6f800d42bedf5b506fc5e69, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1328337999352734181, guid: a458a7f0c6f800d42bedf5b506fc5e69, type: 3}
       propertyPath: m_LocalPosition.z
