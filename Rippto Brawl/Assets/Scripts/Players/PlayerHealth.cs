@@ -11,7 +11,8 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rb;
 
     [Header("Death Zone Limits")]
-    public float deathY = -10f;   // niche girne par death
+    public float deathdownY = -10f; 
+    public float deathupX = -10f;   // niche girne par death
     public float deathXLeft = -15f;  // left side limit
     public float deathXRight = 15f;  // right side limit
 
@@ -27,7 +28,8 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         // agar player screen ke bahar gaya to die
-        if (transform.position.y < deathY ||
+        if (transform.position.y < deathdownY ||
+            transform.position.y > deathupX ||
             transform.position.x < deathXLeft ||
             transform.position.x > deathXRight)
         {
