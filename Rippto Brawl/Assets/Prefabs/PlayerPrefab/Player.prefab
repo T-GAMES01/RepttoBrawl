@@ -257,9 +257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241093a171241ba4bb1ac7408c829254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 13
-  jumpForce: 15
-  dashSpeed: 20
+  moveSpeed: 20
+  jumpForce: 20
+  dashSpeed: 30
   dashDuration: 0.2
   dashCooldown: 1
 --- !u!114 &4889790938585908660
