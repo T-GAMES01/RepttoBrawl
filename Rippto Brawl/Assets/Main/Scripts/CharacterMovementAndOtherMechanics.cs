@@ -173,7 +173,9 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
     private bool wasJumping;
     private bool justJumped;
     private float lastVerticalVelocity;
-
+    
+    //>>>>>>>>>>> DUST_RUNNING <<<<<<<<<<<<<//
+    [SerializeField] private DustRunning dustRun;
     // ============================================
     // UNITY LIFECYCLE
     // ============================================
@@ -280,10 +282,29 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
         UpdateAnimations();
         
         // Flip sprite based on movement direction
-        if (flipSpriteOnMovement)
+       /* if (flipSpriteOnMovement)
         {
             FlipSpriteBasedOnMovement();
-        }
+        }*/
+        // --- FORCE FLIP (simple & reliable) ---  
+if (horizontalInput > 0f)        // D key → face right
+{
+    transform.localScale = new Vector3(-0.25f, transform.localScale.y, transform.localScale.z);
+}
+else if (horizontalInput < 0f)   // A key → face left
+{
+    transform.localScale = new Vector3(0.25f, transform.localScale.y, transform.localScale.z);
+}
+//////
+    bool isMoving = horizontalInput != 0;
+bool playRunDust = isMoving && isGrounded;
+
+if (dustRun != null)
+{
+    dustRun.SetRunningDust(playRunDust);
+}
+
+        
     }
 
     private void FixedUpdate()
@@ -789,7 +810,7 @@ bool isRunningState =
     // ============================================
     // SPRITE FLIPPING
     // ============================================
-private void FlipSpriteBasedOnMovement()
+/*private void FlipSpriteBasedOnMovement()
 {
     if (horizontalInput > 0)  // D
     {
@@ -799,7 +820,7 @@ private void FlipSpriteBasedOnMovement()
     {
         transform.localScale = new Vector3(0.25f, transform.localScale.y, transform.localScale.z);
     }
-}
+}*/
 
     // ============================================
     // DEBUG VISUALIZATION (Optional)

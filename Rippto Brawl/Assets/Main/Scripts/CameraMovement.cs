@@ -281,7 +281,7 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (target == null)
         {
