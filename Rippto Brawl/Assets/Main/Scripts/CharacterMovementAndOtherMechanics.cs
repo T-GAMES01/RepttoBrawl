@@ -173,9 +173,11 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
     private bool wasJumping;
     private bool justJumped;
     private float lastVerticalVelocity;
+    public bool IsGrounded => isGrounded;
     
     //>>>>>>>>>>> DUST_RUNNING <<<<<<<<<<<<<//
     [SerializeField] private DustRunning dustRun;
+    private bool isInAttack = false;
     // ============================================
     // UNITY LIFECYCLE
     // ============================================
@@ -280,7 +282,7 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
         
         // Update animations
         UpdateAnimations();
-        
+        isInAttack = animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");      
         // Flip sprite based on movement direction
        /* if (flipSpriteOnMovement)
         {
@@ -334,42 +336,34 @@ if (dustRun != null)
     // ============================================
     // MOVEMENT METHODS
     // ============================================
-    private void HandleMovement()
+ private void HandleMovement()
+{
+    if (isInAttack)
+{
+    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+    return;
+}
+    // Check if movement is locked by combat script
+    PlayerCombatController combat = GetComponent<PlayerCombatController>();
+    if (combat != null && combat.LockMovement)
     {
-        float targetSpeed = isGrounded ? groundMoveSpeed : airMoveSpeed;
-        
-        // Calculate target velocity based on input
-        float targetVelocity = horizontalInput * targetSpeed;
-        
-        // Get current horizontal velocity
-        float currentVelocity = rb.linearVelocity.x;
-        
-        // Apply acceleration or deceleration
-        float velocityChange;
-        if (Mathf.Abs(horizontalInput) > 0.01f)
-        {
-            // Accelerate towards target speed
-            velocityChange = acceleration * Time.fixedDeltaTime;
-        }
-        else
-        {
-            // Decelerate when no input
-            velocityChange = deceleration * Time.fixedDeltaTime;
-            
-            // Apply ground friction
-            if (isGrounded)
-            {
-                currentVelocity *= groundFriction;
-            }
-        }
-        
-        // Smoothly interpolate velocity
-        float newVelocity = Mathf.MoveTowards(currentVelocity, targetVelocity, velocityChange);
-        
-        // Apply velocity (preserve Y velocity)
-        rb.linearVelocity = new Vector2(newVelocity, rb.linearVelocity.y);
+        // Stop horizontal movement while locked
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        return;
     }
 
+    float targetSpeed = isGrounded ? groundMoveSpeed : airMoveSpeed;
+    float targetVelocity = horizontalInput * targetSpeed;
+
+    float currentVelocity = rb.linearVelocity.x;
+    float velocityChange = Mathf.Abs(horizontalInput) > 0.01f ? acceleration * Time.fixedDeltaTime : deceleration * Time.fixedDeltaTime;
+    
+    if (isGrounded && Mathf.Abs(horizontalInput) < 0.01f)
+        currentVelocity *= groundFriction;
+
+    float newVelocity = Mathf.MoveTowards(currentVelocity, targetVelocity, velocityChange);
+    rb.linearVelocity = new Vector2(newVelocity, rb.linearVelocity.y);
+}
     // ============================================
     // JUMP METHODS
     // ============================================
@@ -451,29 +445,27 @@ if (dustRun != null)
     // ============================================
     // DASH METHODS
     // ============================================
-    private void TryDash()
+private void TryDash()
+{
+    // Only allow dash if player is grounded
+    if (!isGrounded) return;
+
+    if (currentDashes > 0 && dashCooldownTimer <= 0 && !isDashing)
     {
-        if (currentDashes > 0 && dashCooldownTimer <= 0 && !isDashing)
-        {
-            // Determine dash direction (prefer input direction, otherwise facing direction)
-            float dashInput = horizontalInput;
-            if (Mathf.Abs(dashInput) < 0.1f)
-            {
-                dashInput = transform.localScale.x > 0 ? 1 : -1;
-            }
-            
-            dashDirection = new Vector2(Mathf.Sign(dashInput), 0);
-            
-            // Start dash
-            isDashing = true;
-            dashTimer = dashDuration;
-            currentDashes--;
-            dashCooldownTimer = dashCooldown;
-            
-            // Apply dash velocity
-            rb.linearVelocity = new Vector2(dashDirection.x * dashSpeed, 0);
-        }
+        float dashInput = horizontalInput;
+        if (Mathf.Abs(dashInput) < 0.1f)
+            dashInput = transform.localScale.x > 0 ? 1 : -1;
+
+        dashDirection = new Vector2(Mathf.Sign(dashInput), 0);
+
+        isDashing = true;
+        dashTimer = dashDuration;
+        currentDashes--;
+        dashCooldownTimer = dashCooldown;
+
+        rb.linearVelocity = new Vector2(dashDirection.x * dashSpeed, 0);
     }
+}
 
     private void UpdateDash()
     {

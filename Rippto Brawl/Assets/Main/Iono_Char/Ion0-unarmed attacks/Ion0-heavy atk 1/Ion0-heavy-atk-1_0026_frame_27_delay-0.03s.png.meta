@@ -1,0 +1,273 @@
+fileFormatVersion: 2
+guid: 17783603748d808419e6890d7827b85b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8401201006619874081
+    second: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_0
+  - first:
+      213: 737875825460203794
+    second: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_1
+  - first:
+      213: -6508428838703373334
+    second: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_2
+  - first:
+      213: 5143412018983310275
+    second: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_3
+  - first:
+      213: 6732554080302694429
+    second: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_4
+  - first:
+      213: 6938884549861099045
+    second: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_5
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 251
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdca4c92230f86b80800000000000000
+      internalID: -8401201006619874081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 31
+        width: 285
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21157e067267d3a00800000000000000
+      internalID: 737875825460203794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 226
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae36d2f447a6da5a0800000000000000
+      internalID: -6508428838703373334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_3
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 162
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c399f4faf1116740800000000000000
+      internalID: 5143412018983310275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_4
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 123
+        width: 52
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d108c83f346de6d50800000000000000
+      internalID: 6732554080302694429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_5
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 160
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 526caebfbbedb4060800000000000000
+      internalID: 6938884549861099045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_0: -8401201006619874081
+      Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_1: 737875825460203794
+      Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_2: -6508428838703373334
+      Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_3: 5143412018983310275
+      Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_4: 6732554080302694429
+      Ion0-heavy-atk-1_0026_frame_27_delay-0.03s_5: 6938884549861099045
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
