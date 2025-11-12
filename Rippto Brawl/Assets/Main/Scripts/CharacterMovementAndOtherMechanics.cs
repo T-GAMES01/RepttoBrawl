@@ -1,21 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// CharacterMovementAndOtherMechanics
-/// Purpose: Brawlhalla-style character controller with smooth, responsive movement mechanics.
-/// Depends on: Rigidbody2D, GroundCheck (Collider2D or LayerMask), Input system (Horizontal, Jump).
-/// Receives: Input from player (horizontal movement, jump, dash, fast fall).
-/// Sends: Physics-based movement via Rigidbody2D, visual feedback through animations.
-/// 
-/// Features:
-/// - Exact Brawlhalla gravity, movement speed, and jump mechanics
-/// - Coyote time for forgiving edge jumps
-/// - Jump buffering for responsive feel
-/// - Fixed jump height (consistent height, not affected by button hold)
-/// - Fast fall mechanics
-/// - Dash system with cooldown
-/// - Smooth acceleration/deceleration for responsive controls
-/// - Complete animation system: Run, Jump (ground + air), Fall, Dash animations
+
 /// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -168,6 +154,14 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
     private bool isFastFalling;
     private float horizontalInput;
     private Vector2 dashDirection;
+    // === WALL SYSTEM === //
+[SerializeField] private Transform wallCheckLeft;
+[SerializeField] private Transform wallCheckRight;
+[SerializeField] private float wallCheckDistance = 0.1f;
+[SerializeField] private LayerMask wallLayer;
+
+private bool isOnWall = false;
+private int wallDirection = 0; // -1 = left, 1 = right
     
     // Animation state tracking
     private bool wasJumping;
@@ -178,6 +172,9 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
     //>>>>>>>>>>> DUST_RUNNING <<<<<<<<<<<<<//
     [SerializeField] private DustRunning dustRun;
     private bool isInAttack = false;
+    // ===== WALL GIZMO SETTINGS ===== //
+    public float gizmoWallCastDistance = 0.2f;
+    public float gizmoWallCastHeight = 1.2f;
     // ============================================
     // UNITY LIFECYCLE
     // ============================================
@@ -244,7 +241,60 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
         
         // Check ground state
         CheckGrounded();
-        
+        // ===== WALL DETECTION ===== //
+// ===== WALL DETECTION ===== //
+isOnWall = false;
+wallDirection = 0;
+
+float wallCastDistance = 0.2f; // how far to check horizontally
+float wallCastHeight = 1.2f;   // height of wall detection box
+
+Vector2 origin = transform.position;
+Vector2 boxSize = new Vector2(0.1f, wallCastHeight);
+
+// LEFT wall check
+RaycastHit2D leftWall = Physics2D.BoxCast(
+    origin,
+    boxSize,
+    0f,
+    Vector2.left,
+    wallCastDistance,
+    wallLayer
+);
+
+// RIGHT wall check
+RaycastHit2D rightWall = Physics2D.BoxCast(
+    origin,
+    boxSize,
+    0f,
+    Vector2.right,
+    wallCastDistance,
+    wallLayer
+);
+
+if (!isGrounded && leftWall.collider != null)
+{
+    isOnWall = true;
+    wallDirection = -1;
+}
+else if (!isGrounded && rightWall.collider != null)
+{
+    isOnWall = true;
+    wallDirection = 1;
+}
+
+// Play animation
+if (isOnWall && !isGrounded)
+{
+    animator.SetTrigger("WallGrab");
+    animator.SetBool("WallSlide", rb.linearVelocity.y < 0);
+}
+else
+{
+    animator.ResetTrigger("WallGrab");
+    animator.SetBool("WallSlide", false);
+}
+    
         // Handle jump input - ONLY on key press, not while holding
         if (Input.GetButtonDown("Jump"))
         {
@@ -279,7 +329,6 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
         {
             isFastFalling = false;
         }
-        
         // Update animations
         UpdateAnimations();
         isInAttack = animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");      
@@ -313,7 +362,12 @@ if (dustRun != null)
     {
         // Apply gravity
         ApplyGravity();
-        
+        // ===== WALL SLIDE ===== //
+    if (isOnWall && !isGrounded && rb.linearVelocity.y < -2f)
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, -2f); // slow slide like Brawlhalla
+    }
+
         // Handle movement (only if not dashing)
         if (!isDashing)
         {
@@ -415,7 +469,23 @@ if (dustRun != null)
         }
         
         bool shouldJump = jumpBufferCounter > 0 && canJump;
-        
+        // ===== WALL JUMP ===== //
+// ===== WALL JUMP ===== //
+if (isOnWall && !isGrounded && Input.GetButtonDown("Jump"))
+{
+    float jumpPower = jumpForce * 1.1f;
+    rb.linearVelocity = new Vector2(7f * -wallDirection, jumpPower);
+
+    currentJumps = 1;          // after wall jump → you still have 2 air jumps
+    justJumped = true;
+
+    jumpBufferCounter = 0;
+    coyoteTimeCounter = 0;
+    landingGraceCounter = 0;
+
+    return; // skip regular jump
+}
+       
         if (shouldJump)
         {
             // Calculate jump force (reduce for air jumps)
@@ -657,10 +727,13 @@ private void TryDash()
             landingGraceCounter -= Time.deltaTime;
         }
     }
-
-    // ============================================
+        // -------------------- PLAY WALL GRAB ANIM--------- //
+        private void PlayWallGrabAnimation()
+{
+    if (animator != null)
+        animator.SetTrigger("WallGrab");
+}
     // ANIMATION METHODS
-    // ============================================
     private void UpdateAnimations()
     {
         // Return early if animator is not available
@@ -824,5 +897,22 @@ bool isRunningState =
         Vector2 origin = (Vector2)transform.position + Vector2.down * groundCheckDistance;
         Vector2 size = new Vector2(groundCheckWidth, 0.1f);
         Gizmos.DrawWireCube(origin, size);
+    // WALL DETECTION GIZMOS
+    Gizmos.color = Color.blue;
+
+    Vector2 wallGizmoOrigin = transform.position;
+    Vector2 wallGizmoSize = new Vector2(0.1f, gizmoWallCastHeight);
+
+    // Left wall box
+    Gizmos.DrawWireCube(
+        wallGizmoOrigin + Vector2.left * gizmoWallCastDistance,
+        wallGizmoSize
+    );
+
+    // Right wall box
+    Gizmos.DrawWireCube(
+        wallGizmoOrigin + Vector2.right * gizmoWallCastDistance,
+        wallGizmoSize
+    );
     }
 }
