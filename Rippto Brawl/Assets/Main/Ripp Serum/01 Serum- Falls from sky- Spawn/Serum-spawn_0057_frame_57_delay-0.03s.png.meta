@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: a50a79e85eb6bf645a0c9d062897351e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7931428150575370744
+    second: Serum-spawn_0057_frame_57_delay-0.03s_0
+  - first:
+      213: -3581359204921469286
+    second: Serum-spawn_0057_frame_57_delay-0.03s_1
+  - first:
+      213: -357981529780508821
+    second: Serum-spawn_0057_frame_57_delay-0.03s_2
+  - first:
+      213: -9086686442302434789
+    second: Serum-spawn_0057_frame_57_delay-0.03s_3
+  - first:
+      213: 8881487648817856652
+    second: Serum-spawn_0057_frame_57_delay-0.03s_4
+  - first:
+      213: 5661299621230600032
+    second: Serum-spawn_0057_frame_57_delay-0.03s_5
+  - first:
+      213: -3342613184180484914
+    second: Serum-spawn_0057_frame_57_delay-0.03s_6
+  - first:
+      213: -3946352936832735390
+    second: Serum-spawn_0057_frame_57_delay-0.03s_7
+  - first:
+      213: 8600487156536644060
+    second: Serum-spawn_0057_frame_57_delay-0.03s_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_0
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 457
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1149461e7121e60800000000000000
+      internalID: 7931428150575370744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 360
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96949927c47c4ec0800000000000000
+      internalID: -3581359204921469286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_2
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 357
+        width: 14
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67284102b1380bf0800000000000000
+      internalID: -357981529780508821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 351
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b129435f2da95e180800000000000000
+      internalID: -9086686442302434789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_4
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 307
+        width: 15
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c80cec0e5f1614b70800000000000000
+      internalID: 8881487648817856652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 248
+        width: 45
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06fd08ab20af09e40800000000000000
+      internalID: 5661299621230600032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_6
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 326
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec48267d407ac91d0800000000000000
+      internalID: -3342613184180484914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_7
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 264
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267e3c1a9ecbb39c0800000000000000
+      internalID: -3946352936832735390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serum-spawn_0057_frame_57_delay-0.03s_8
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 273
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd11da460811b5770800000000000000
+      internalID: 8600487156536644060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Serum-spawn_0057_frame_57_delay-0.03s_0: 7931428150575370744
+      Serum-spawn_0057_frame_57_delay-0.03s_1: -3581359204921469286
+      Serum-spawn_0057_frame_57_delay-0.03s_2: -357981529780508821
+      Serum-spawn_0057_frame_57_delay-0.03s_3: -9086686442302434789
+      Serum-spawn_0057_frame_57_delay-0.03s_4: 8881487648817856652
+      Serum-spawn_0057_frame_57_delay-0.03s_5: 5661299621230600032
+      Serum-spawn_0057_frame_57_delay-0.03s_6: -3342613184180484914
+      Serum-spawn_0057_frame_57_delay-0.03s_7: -3946352936832735390
+      Serum-spawn_0057_frame_57_delay-0.03s_8: 8600487156536644060
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

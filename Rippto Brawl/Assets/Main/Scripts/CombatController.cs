@@ -20,11 +20,15 @@ public class PlayerCombatController : MonoBehaviour
     private int comboCounter = 0;
     private float lastAttackTime = 0f;
     private float comboResetTime = 1f;
-    
+    public Rigidbody2D rb;
     [Header("Attack Lunges")]
-    private Rigidbody2D rb;
-    [SerializeField] private float lightAttackLunge = 2f;
-    [SerializeField] private float heavyAttackLunge = 4f;
+    [SerializeField] private float lightAttackLunge_Ground = 2f;
+    [SerializeField] private float lightAttackLunge_Air = 1.2f;
+    [SerializeField] private float sideKickLunge = 2.5f;
+
+    [SerializeField] private float heavyAttackLunge_Ground = 4f;
+    [SerializeField] private float heavyAttackLunge_Air = 2.5f;
+    [SerializeField] private float flyingFuLunge = 6f; // heavy while moving
 
     public bool LockMovement { get; private set; } = false; // <-- New
     private bool isAttacking = false;
@@ -63,69 +67,77 @@ public class PlayerCombatController : MonoBehaviour
 private void LightAttack()
 {
     bool isAir = !movement.IsGrounded;
-
-    // Detect if player is moving horizontally
     float horiz = Input.GetAxisRaw("Horizontal");
     bool isMoving = Mathf.Abs(horiz) > 0.1f;
+    float dir = transform.localScale.x > 0 ? 1 : -1;
 
-    if (isMoving && !isAir) 
+    // ----------------------
+    // SIDE KICK (Moving)
+    // ----------------------
+    if (isMoving && !isAir)
     {
-        // Trigger SideKick while moving on ground
         animator.SetTrigger("SideKick");
 
-        // Apply lunge like a light running kick
-        float dir = transform.localScale.x > 0 ? 1 : -1;
-        float lunge = lightAttackLunge * 1.2f; // slightly longer than normal light
-        rb.AddForce(new Vector2(dir * lunge, 0), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(dir * sideKickLunge, 0), ForceMode2D.Impulse);
 
-        // Update combo & attack timer
         comboCounter++;
         lastAttackTime = Time.time;
-
-        return; // exit to prevent normal light attack from firing
+        return;
     }
 
-    // Normal light attack if not moving
-    animator.SetTrigger(isAir ? "AirLightAttack" : "LightAttack");
-
-    float dirNormal = transform.localScale.x > 0 ? 1 : -1;
-    float lungeNormal = isAir ? lightAttackLunge * 0.5f : lightAttackLunge;
-    rb.AddForce(new Vector2(dirNormal * lungeNormal, 0), ForceMode2D.Impulse);
+    // ----------------------
+    // NORMAL LIGHT ATTACKS
+    // ----------------------
+    if (isAir)
+    {
+        animator.SetTrigger("AirLightAttack");
+        rb.AddForce(new Vector2(dir * lightAttackLunge_Air, 0), ForceMode2D.Impulse);
+    }
+    else
+    {
+        animator.SetTrigger("LightAttack");
+        rb.AddForce(new Vector2(dir * lightAttackLunge_Ground, 0), ForceMode2D.Impulse);
+    }
 
     comboCounter++;
     lastAttackTime = Time.time;
 }
-
 private void HeavyAttack()
 {
     bool isAir = !movement.IsGrounded;
-
     float horiz = Input.GetAxisRaw("Horizontal");
     bool movingSideways = Mathf.Abs(horiz) > 0.1f;
+    float dir = transform.localScale.x > 0 ? 1 : -1;
 
+    // -------------------------
+    // FLYING FU (Heavy Moving)
+    // -------------------------
     if (movingSideways)
     {
         animator.SetTrigger("FlyingFuChainAttack");
-
-        float dir = transform.localScale.x > 0 ? 1 : -1;
-        rb.AddForce(new Vector2(dir * heavyAttackLunge * 1.5f, 0), ForceMode2D.Impulse);
-
+        rb.AddForce(new Vector2(dir * flyingFuLunge, 0), ForceMode2D.Impulse);
         return;
     }
 
-    animator.SetTrigger(isAir ? "AirHeavyAttack" : "HeavyAttack");
-
-    float dir2 = transform.localScale.x > 0 ? 1 : -1;
-    float lunge = isAir ? heavyAttackLunge * 0.6f : heavyAttackLunge;
-    rb.AddForce(new Vector2(dir2 * lunge, 0), ForceMode2D.Impulse);
+    // -------------------------
+    // NORMAL HEAVY ATTACK
+    // -------------------------
+    if (isAir)
+    {
+        animator.SetTrigger("AirHeavyAttack");
+        rb.AddForce(new Vector2(dir * heavyAttackLunge_Air, 0), ForceMode2D.Impulse);
+    }
+    else
+    {
+        animator.SetTrigger("HeavyAttack");
+        rb.AddForce(new Vector2(dir * heavyAttackLunge_Ground, 0), ForceMode2D.Impulse);
+    }
 }
-
     private void ResetComboTimer()
     {
         if (Time.time - lastAttackTime > comboResetTime)
             comboCounter = 0;
     }
-
     // Called by Animation Events
     public void DealDamage()
     {
@@ -153,7 +165,6 @@ private void HeavyAttack()
             }
         }
     }
-
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null) return;

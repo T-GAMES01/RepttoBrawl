@@ -87,7 +87,6 @@ public class CharacterMovementAndOtherMechanics : MonoBehaviour
     
     [Tooltip("Number of dashes available. Brawlhalla typically has 1-2 dashes.")]
     [SerializeField] private int maxDashes = 1;
-
     // ============================================
     // FAST FALL SETTINGS
     // ============================================
@@ -175,9 +174,16 @@ private int wallDirection = 0; // -1 = left, 1 = right
     // ===== WALL GIZMO SETTINGS ===== //
     public float gizmoWallCastDistance = 0.2f;
     public float gizmoWallCastHeight = 1.2f;
-    // ============================================
-    // UNITY LIFECYCLE
-    // ============================================
+    // ====================== DOUBLE TAP DASH VARIABLES ====================== //
+    private float lastLeftTapTime = -1f;
+    private float lastRightTapTime = -1f;
+    [SerializeField] private float doubleTapThreshold = 0.3f; // max time between taps to trigger dash
+    // ======================================================================= //
+    // === SLIDE (RUN-END) SYSTEM === //
+    [SerializeField] private float slideDeceleration = 20f; 
+    [SerializeField] private float slideDuration = 0.25f;
+    private bool isSliding = false;
+    private float slideTimer = 0f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -234,8 +240,18 @@ private int wallDirection = 0; // -1 = left, 1 = right
        // transform.localScale = new Vector3(-1, 1, 1);   // force right
         // Get input
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        // Jump only triggers on key press (GetButtonDown), not while holding
-        
+        // ===== START SLIDE WHEN PLAYER RELEASES RUN ===== //
+    if (isGrounded && !isDashing && !isSliding)
+    {
+        bool wasRunning = Mathf.Abs(rb.linearVelocity.x) > runAnimationThreshold;
+        bool releasedRun = Mathf.Abs(horizontalInput) < 0.01f;
+
+        if (wasRunning && releasedRun)
+        {
+            StartSlide();
+        }
+    }
+        // Jump only triggers on key press (GetButtonDown), not while holding      
         // Update timers
         UpdateTimers();
         
@@ -315,11 +331,32 @@ else
             // "Dash" button not configured - that's okay, we'll use LeftShift
         }
         
-        if (dashInput)
-        {
-            TryDash();
-        }
-        
+    horizontalInput = Input.GetAxisRaw("Horizontal");
+
+    // Update timers
+    UpdateTimers();
+    CheckGrounded();
+    HandleDoubleTapDash(); // 👈 New method for double-tap dash detection
+
+    // Handle fast fall input
+    if ((Input.GetAxisRaw("Vertical") < -0.5f || Input.GetKey(KeyCode.S)) && !isGrounded && rb.linearVelocity.y < 0)
+        isFastFalling = true;
+    else
+        isFastFalling = false;
+
+    UpdateAnimations();
+    isInAttack = animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");
+
+    // Flip sprite manually
+    if (horizontalInput > 0f)
+        transform.localScale = new Vector3(-0.35f, transform.localScale.y, transform.localScale.z);
+    else if (horizontalInput < 0f)
+        transform.localScale = new Vector3(0.35f, transform.localScale.y, transform.localScale.z);
+
+    bool isMoving = horizontalInput != 0;
+    bool playRunDust = isMoving && isGrounded;
+    if (dustRun != null)
+        dustRun.SetRunningDust(playRunDust);      
         // Handle fast fall input
         if ((Input.GetAxisRaw("Vertical") < -0.5f || Input.GetKey(KeyCode.S)) && !isGrounded && rb.linearVelocity.y < 0)
         {
@@ -332,36 +369,26 @@ else
         // Update animations
         UpdateAnimations();
         isInAttack = animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");      
-        // Flip sprite based on movement direction
-       /* if (flipSpriteOnMovement)
-        {
-            FlipSpriteBasedOnMovement();
-        }*/
-        // --- FORCE FLIP (simple & reliable) ---  
-if (horizontalInput > 0f)        // D key → face right
-{
-    transform.localScale = new Vector3(-0.25f, transform.localScale.y, transform.localScale.z);
-}
-else if (horizontalInput < 0f)   // A key → face left
-{
-    transform.localScale = new Vector3(0.25f, transform.localScale.y, transform.localScale.z);
-}
-//////
-    bool isMoving = horizontalInput != 0;
-bool playRunDust = isMoving && isGrounded;
-
-if (dustRun != null)
-{
-    dustRun.SetRunningDust(playRunDust);
-}
-
-        
     }
-
     private void FixedUpdate()
     {
         // Apply gravity
         ApplyGravity();
+        // ===== APPLY SLIDE MOVEMENT ===== //
+    if (isSliding)
+    {
+        slideTimer -= Time.fixedDeltaTime;
+
+        float newX = Mathf.MoveTowards(rb.linearVelocity.x, 0, slideDeceleration * Time.fixedDeltaTime);
+        rb.linearVelocity = new Vector2(newX, rb.linearVelocity.y);
+
+        if (slideTimer <= 0 || Mathf.Abs(newX) < 0.05f)
+        {
+            isSliding = false;
+        }
+
+        return; // stop normal movement during slide
+    }
         // ===== WALL SLIDE ===== //
     if (isOnWall && !isGrounded && rb.linearVelocity.y < -2f)
     {
@@ -485,7 +512,7 @@ if (isOnWall && !isGrounded && Input.GetButtonDown("Jump"))
 
     return; // skip regular jump
 }
-       
+      
         if (shouldJump)
         {
             // Calculate jump force (reduce for air jumps)
@@ -507,36 +534,26 @@ if (isOnWall && !isGrounded && Input.GetButtonDown("Jump"))
             coyoteTimeCounter = 0;
             landingGraceCounter = 0;
         }
-        
-        // Fixed jump height: Jump height is consistent, not affected by button hold duration
-        // (Variable jump height removed per user request)
     }
-
-    // ============================================
-    // DASH METHODS
-    // ============================================
-private void TryDash()
+private void TryDash(int direction)
 {
-    // Only allow dash if player is grounded
-    if (!isGrounded) return;
-
     if (currentDashes > 0 && dashCooldownTimer <= 0 && !isDashing)
     {
-        float dashInput = horizontalInput;
-        if (Mathf.Abs(dashInput) < 0.1f)
-            dashInput = transform.localScale.x > 0 ? 1 : -1;
-
-        dashDirection = new Vector2(Mathf.Sign(dashInput), 0);
-
         isDashing = true;
         dashTimer = dashDuration;
         currentDashes--;
         dashCooldownTimer = dashCooldown;
 
-        rb.linearVelocity = new Vector2(dashDirection.x * dashSpeed, 0);
+        dashDirection = new Vector2(direction, 0);
+        rb.linearVelocity = new Vector2(dashDirection.x * dashSpeed, rb.linearVelocity.y);
+
+        // Trigger dash animation
+        if (animator != null && HasParameter("IsDashing"))
+    {
+        animator.SetBool("IsDashing", true);
+    }
     }
 }
-
     private void UpdateDash()
     {
         if (isDashing)
@@ -563,6 +580,14 @@ private void TryDash()
         {
             dashCooldownTimer -= Time.fixedDeltaTime;
         }
+        if (dashTimer <= 0)
+{
+    isDashing = false;
+    if (animator != null && HasParameter("IsDashing"))
+    {
+        animator.SetBool("IsDashing", false);
+    }
+}
     }
 
     // ============================================
@@ -871,26 +896,40 @@ bool isRunningState =
         }
         return false;
     }
+    private void HandleDoubleTapDash()
+    {
+        // detect left double-tap (A)
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (Time.time - lastLeftTapTime <= doubleTapThreshold)
+            {
+                TryDash(-1); // dash left
+            }
+            lastLeftTapTime = Time.time;
+        }
 
-    // ============================================
-    // SPRITE FLIPPING
-    // ============================================
-/*private void FlipSpriteBasedOnMovement()
+        // detect right double-tap (D)
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (Time.time - lastRightTapTime <= doubleTapThreshold)
+            {
+                TryDash(1); // dash right
+            }
+            lastRightTapTime = Time.time;
+        }
+    }
+    private void StartSlide()
 {
-    if (horizontalInput > 0)  // D
-    {
-        transform.localScale = new Vector3(-0.25f, transform.localScale.y, transform.localScale.z);
-    }
-    else if (horizontalInput < 0)  // A
-    {
-        transform.localScale = new Vector3(0.25f, transform.localScale.y, transform.localScale.z);
-    }
-}*/
+    isSliding = true;
+    slideTimer = slideDuration;
 
-    // ============================================
-    // DEBUG VISUALIZATION (Optional)
-    // ============================================
-    private void OnDrawGizmosSelected()
+    // trigger animation
+    if (animator != null)
+    {
+        animator.SetTrigger("Slide");
+    }
+}
+    private void OnDrawGizmos()
     {
         // Draw ground check area
         Gizmos.color = isGrounded ? Color.green : Color.red;

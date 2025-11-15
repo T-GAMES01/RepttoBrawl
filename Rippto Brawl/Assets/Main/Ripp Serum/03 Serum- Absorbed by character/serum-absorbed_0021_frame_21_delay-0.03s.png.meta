@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 0912770517bb9dd4d8092e6c2737051e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2452523546738157645
+    second: serum-absorbed_0021_frame_21_delay-0.03s_0
+  - first:
+      213: 8702497733015145486
+    second: serum-absorbed_0021_frame_21_delay-0.03s_1
+  - first:
+      213: 4656122613683749468
+    second: serum-absorbed_0021_frame_21_delay-0.03s_2
+  - first:
+      213: 1467432163061794727
+    second: serum-absorbed_0021_frame_21_delay-0.03s_3
+  - first:
+      213: -8365001062025223412
+    second: serum-absorbed_0021_frame_21_delay-0.03s_4
+  - first:
+      213: -4379794465963206795
+    second: serum-absorbed_0021_frame_21_delay-0.03s_5
+  - first:
+      213: -1311936406613858191
+    second: serum-absorbed_0021_frame_21_delay-0.03s_6
+  - first:
+      213: 6524768557812942541
+    second: serum-absorbed_0021_frame_21_delay-0.03s_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: serum-absorbed_0021_frame_21_delay-0.03s_0
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 257
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48eb96fb2d190220800000000000000
+      internalID: 2452523546738157645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serum-absorbed_0021_frame_21_delay-0.03s_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 304
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c8203949b75c870800000000000000
+      internalID: 8702497733015145486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serum-absorbed_0021_frame_21_delay-0.03s_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 241
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c52884319dedd9040800000000000000
+      internalID: 4656122613683749468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serum-absorbed_0021_frame_21_delay-0.03s_3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 215
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a7084b07cd5d5410800000000000000
+      internalID: 1467432163061794727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serum-absorbed_0021_frame_21_delay-0.03s_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 178
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03a8309adb89eb80800000000000000
+      internalID: -8365001062025223412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serum-absorbed_0021_frame_21_delay-0.03s_5
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 168
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5779a0b6328d733c0800000000000000
+      internalID: -4379794465963206795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serum-absorbed_0021_frame_21_delay-0.03s_6
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 73
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178e0e30ac01bcde0800000000000000
+      internalID: -1311936406613858191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serum-absorbed_0021_frame_21_delay-0.03s_7
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 70
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc604120f62ac8a50800000000000000
+      internalID: 6524768557812942541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      serum-absorbed_0021_frame_21_delay-0.03s_0: 2452523546738157645
+      serum-absorbed_0021_frame_21_delay-0.03s_1: 8702497733015145486
+      serum-absorbed_0021_frame_21_delay-0.03s_2: 4656122613683749468
+      serum-absorbed_0021_frame_21_delay-0.03s_3: 1467432163061794727
+      serum-absorbed_0021_frame_21_delay-0.03s_4: -8365001062025223412
+      serum-absorbed_0021_frame_21_delay-0.03s_5: -4379794465963206795
+      serum-absorbed_0021_frame_21_delay-0.03s_6: -1311936406613858191
+      serum-absorbed_0021_frame_21_delay-0.03s_7: 6524768557812942541
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
